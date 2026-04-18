@@ -1,0 +1,206 @@
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 32px;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: 52px;
+  letter-spacing: 3px;
+  line-height: 1;
+  color: #f1f5f9;
+}
+
+.subtitle {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: var(--muted);
+  margin-top: 5px;
+}
+
+.myRank {
+  text-align: center;
+  padding: 14px 22px;
+  background: var(--green-dim);
+  border: 1px solid var(--border-green);
+  border-radius: 4px;
+}
+
+.myRankNum {
+  font-family: var(--font-display);
+  font-size: 42px;
+  color: var(--green);
+  line-height: 1;
+}
+
+.myRankLabel {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+.podium {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.podiumCard {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  padding: 24px 16px;
+  text-align: center;
+  transition: border-color 0.2s;
+  order: var(--order);
+}
+
+.podiumCard:hover { border-color: rgba(255,255,255,0.12); }
+.podiumMe { border-color: var(--border-green) !important; background: rgba(34,197,94,0.03); }
+
+.podiumMedal { font-size: 32px; margin-bottom: 10px; }
+
+.podiumAvatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 20px;
+  color: #f1f5f9;
+  margin: 0 auto 10px;
+}
+
+.podiumName {
+  font-size: 15px;
+  font-weight: 700;
+  color: #f1f5f9;
+  margin-bottom: 8px;
+}
+
+.podiumPoints {
+  font-family: var(--font-display);
+  font-size: 36px;
+  color: var(--green);
+  line-height: 1;
+}
+
+.podiumPtsLabel {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  color: var(--muted);
+  letter-spacing: 1px;
+}
+
+.table {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.tableHead {
+  display: grid;
+  grid-template-columns: 56px 1fr 100px 100px 120px;
+  padding: 12px 24px;
+  background: rgba(34,197,94,0.04);
+  border-bottom: 1px solid var(--border-green);
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: var(--muted);
+}
+
+.tableRow {
+  display: grid;
+  grid-template-columns: 56px 1fr 100px 100px 120px;
+  padding: 14px 24px;
+  border-bottom: 1px solid var(--border);
+  align-items: center;
+  transition: background 0.15s;
+}
+
+.tableRow:hover { background: rgba(255,255,255,0.02); }
+.tableRow:last-child { border-bottom: none; }
+
+.meRow {
+  background: rgba(34,197,94,0.04) !important;
+  border-left: 3px solid var(--green);
+}
+
+.rank {
+  font-family: var(--font-display);
+  font-size: 26px;
+  color: #374151;
+}
+
+.rankTop { color: #f59e0b; font-size: 22px; }
+
+.playerCell {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.playerAvatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 16px;
+  color: #f1f5f9;
+  flex-shrink: 0;
+}
+
+.playerName {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.youTag {
+  display: inline-block;
+  margin-left: 6px;
+  padding: 1px 6px;
+  background: var(--green-dim);
+  border-radius: 2px;
+  font-family: var(--font-mono);
+  font-size: 8px;
+  color: var(--green);
+  letter-spacing: 1px;
+  vertical-align: middle;
+}
+
+.cell {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: #9ca3af;
+  text-align: right;
+}
+
+.cellPts {
+  color: var(--green) !important;
+  font-weight: 700;
+}
+
+@media (max-width: 700px) {
+  .tableHead, .tableRow {
+    grid-template-columns: 40px 1fr 70px 80px;
+  }
+  .tableHead span:nth-child(3),
+  .tableRow span:nth-child(3) { display: none; }
+  .podium { grid-template-columns: 1fr; }
+}
